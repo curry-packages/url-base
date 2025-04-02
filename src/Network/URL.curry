@@ -15,6 +15,8 @@ module Network.URL
 
 import Data.Char ( isAlphaNum )
 import Numeric   ( readHex )
+import Test.Prop
+
 
 --- Translates arbitrary strings into equivalent URL encoded strings.
 string2urlencoded :: String -> String
@@ -38,5 +40,9 @@ urlencoded2string (c:cs)
                                                  _        -> 0)
                  : urlencoded2string (drop 2 cs)
   | otherwise = c : urlencoded2string cs
+
+-- Test whether encoding and decoding yields identical results.
+testUrlEnconding :: String -> Prop
+testUrlEnconding s = urlencoded2string (string2urlencoded s) -=- s
 
 ------------------------------------------------------------------------------
