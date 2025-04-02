@@ -2,7 +2,7 @@
     "name": "url-base",
     "version": "0.1.0",
     "author": "Michael Hanus <mh@informatik.uni-kiel.de>",
-    "synopsis": "Library for dealing with URLs",
+    "synopsis": "Base library for dealing with URLs",
     "category": [ "Web" ],
     "dependencies": {
         "base" : "^ 3.0.0"
